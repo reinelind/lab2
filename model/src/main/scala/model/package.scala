@@ -2,7 +2,7 @@ import java.time.LocalDate
 
 package object model {
 
-  case class Reviewer(id: Int, name: String)
+  case class Reviewer(id: Int, name: Option[String])
 
   case class Rating(movieId: Int, reviewerId: Int, reviewStars: Option[Double], numberOfRatings: Option[Int]) //todo: num_o_ratings
 
