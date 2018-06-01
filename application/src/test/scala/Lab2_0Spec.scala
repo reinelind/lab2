@@ -132,9 +132,11 @@ class Lab2_0Spec extends AsyncFlatSpec with BeforeAndAfterAll {
   override def beforeAll(): Unit = {
     Await.result(
       lab20.drop
-        .andThen {
-          case util.Success(_) => println("DB is clear and ready")
-          case util.Failure(_) =>
+        .map(_ => "ok")
+        .recover({ case ex => "error" })
+        .map {
+          case "ok" => println("DB is clear and ready")
+          case "error" =>
             println("DB is in unknown state, check the drop script")
         },
       Duration.Inf

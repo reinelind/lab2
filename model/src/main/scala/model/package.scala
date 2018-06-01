@@ -4,7 +4,7 @@ package object model {
 
   case class Reviewer(id: Int, name: Option[String])
 
-  case class Rating(movieId: Int, reviewerId: Int, reviewStars: Option[Double], numberOfRatings: Option[Int]) //todo: num_o_ratings
+  case class Rating(movieId: Int, reviewerId: Int, reviewStars: Option[Double], numberOfRatings: Option[Int])
 
   case class Movie(id: Int, title: String, year: Int, time: Int, language: String, releaseDate: Option[LocalDate], releaseCountry: String)
 
