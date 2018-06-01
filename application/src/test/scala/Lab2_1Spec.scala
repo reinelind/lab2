@@ -47,13 +47,13 @@ class Lab2_1Spec extends AsyncFlatSpec with BeforeAndAfterAll {
           )))
   }
 
-  it should "give + 1 DRP for 2 task" in {
+  it should "give +1 DRP for 2 task" in {
     lab21.task2.map { result =>
       assert(result.contains(1999))
     }
   }
 
-  it should "give + 1 DRP for 3 task" in {
+  it should "give +1 DRP for 3 task" in {
     lab21.task3.map { result =>
       assert(
         result == Set(
@@ -64,7 +64,7 @@ class Lab2_1Spec extends AsyncFlatSpec with BeforeAndAfterAll {
     }
   }
 
-  it should "give + 1 DRP for 4 task" in {
+  it should "give +1 DRP for 4 task" in {
     lab21.task4.map { result =>
       assert(
         result == Set(
@@ -93,7 +93,7 @@ class Lab2_1Spec extends AsyncFlatSpec with BeforeAndAfterAll {
     }
   }
 
-  it should "give + 1 DRP for 5 task" in {
+  it should "give +1 DRP for 5 task" in {
     lab21.task5.map { result =>
       assert(
         result == Set(
@@ -147,7 +147,7 @@ class Lab2_1Spec extends AsyncFlatSpec with BeforeAndAfterAll {
     }
   }
 
-  it should "give + 1 DRP for 6 task" in {
+  it should "give +1 DRP for 6 task" in {
     lab21.task6.map { result =>
       assert(
         result == Set(
@@ -168,7 +168,7 @@ class Lab2_1Spec extends AsyncFlatSpec with BeforeAndAfterAll {
     }
   }
 
-  it should "give + 1 DRP for 7 task" in {
+  it should "give +1 DRP for 7 task" in {
     lab21.task7.map { result =>
       assert(
         result == Set(
@@ -186,7 +186,7 @@ class Lab2_1Spec extends AsyncFlatSpec with BeforeAndAfterAll {
     }
   }
 
-  it should "give + 1 DRP for 8 task" in {
+  it should "give +1 DRP for 8 task" in {
     lab21.task8.map { result =>
       assert(
         result == Set(
@@ -198,7 +198,7 @@ class Lab2_1Spec extends AsyncFlatSpec with BeforeAndAfterAll {
     }
   }
 
-  it should "give + 1 DRP for 9 task" in {
+  it should "give +1 DRP for 9 task" in {
     lab21.task9.map { result =>
       assert(
         result == Set(
@@ -208,7 +208,7 @@ class Lab2_1Spec extends AsyncFlatSpec with BeforeAndAfterAll {
     }
   }
 
-  it should "give + 1 DRP for 10 task" in {
+  it should "give +1 DRP for 10 task" in {
     lab21.task10.map { result =>
       assert(result.contains(111))
     }
