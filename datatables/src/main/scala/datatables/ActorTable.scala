@@ -8,6 +8,8 @@ class ActorTable (tag: Tag) extends Table[model.Actor](tag, "Actor") {
   val lname = column[String]("act_lname", O.Length(20,true))
   val gender = column[String]("act_gender",O.Length(1,true))
 
+
+
   def * = (id,fname,lname,gender).mapTo[model.Actor]
 }
 

@@ -5,9 +5,11 @@ import slick.jdbc.PostgresProfile.api._
 
 
 class MovieDirectionTable(tag: Tag) extends Table[model.MovieDirection](tag, "movie_direction") {
-  val id = column[Int]("id", O.PrimaryKey, O.AutoInc)
-  val movieId = column[Int]("movie_id")
-  val directorId = column[Int]("director_id")
+  val movieId = column[Int]("id")
+  val directorId = column[Int]("id")
+
+  val movieIdFk = foreignKey ("mov_id_FK", movieId, MovieTable.table)(_.id, ForeignKeyAction.Cascade, ForeignKeyAction.Cascade)
+  val directorIdFk = foreignKey ("dir_id_FK", directorId, DirectorTable.table)(_.id, ForeignKeyAction.Cascade, ForeignKeyAction.Cascade)
 
   def * = (movieId, directorId).mapTo[model.MovieDirection]
 }
