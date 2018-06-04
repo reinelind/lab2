@@ -9,3 +9,4 @@ package object datatables {
     MappedColumnType.base[LocalDate, java.sql.Date](java.sql.Date.valueOf, _.toLocalDate)
 
 }
+

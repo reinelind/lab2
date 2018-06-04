@@ -5,7 +5,7 @@ import scala.concurrent.{ExecutionContext, Future}
 
 class Lab2_0(db: Database) {
   /** Creates all database schema */
-  def create(implicit ec: ExecutionContext): Future[Unit] = ???
+  def create(implicit ec: ExecutionContext): Future[Unit] =
 
   /** Drops all database schema */
   def drop(implicit ec: ExecutionContext): Future[Unit] =  ???
