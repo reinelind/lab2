@@ -75,7 +75,7 @@ class Lab2_0(db: Database) {
   def createRating(record: Rating)(implicit ec: ExecutionContext): Future[Int] = db.run(RatingTable.table += record)
 
   /** Gets all records */
-  def getAllRatings(implicit ec: ExecutionContext): Future[Set[Rating]] = db.run (RatingTable.table.result).mapTo
+  def getAllRatings(implicit ec: ExecutionContext): Future[Set[Rating]] = db.run (RatingTable.table.result).map(x => x.toSet)
 
   /** Updates record by id */
   def updateRatingById(movieId: Int, reviewerId: Int, record: Rating)(implicit ec: ExecutionContext): Future[Int] =
@@ -94,7 +94,7 @@ class Lab2_0(db: Database) {
   /** Creates new record */
   def createGenre(record: Genre)(implicit ec: ExecutionContext): Future[Int] = db.run(GenresTable.table += record)
   /** Gets all records */
-  def getAllGenres(implicit ec: ExecutionContext): Future[Set[Genre]] = db.run(GenresTable.table.result).mapTo
+  def getAllGenres(implicit ec: ExecutionContext): Future[Set[Genre]] = db.run(GenresTable.table.result).map(x => x.toSet)
 
   /** Updates record by id */
   def updateGenreById(id: Int, record: Genre)(implicit ec: ExecutionContext): Future[Int] =
@@ -111,7 +111,7 @@ class Lab2_0(db: Database) {
   def createMovieGenre(record: MovieGenre)(implicit ec: ExecutionContext): Future[Int] = db.run(MovieGenreTable.table += record)
 
   /** Gets all records */
-  def getAllMovieGenres(implicit ec: ExecutionContext): Future[Set[MovieGenre]] = db.run(MovieGenreTable.table.result).mapTo
+  def getAllMovieGenres(implicit ec: ExecutionContext): Future[Set[MovieGenre]] = db.run(MovieGenreTable.table.result).map(x => x.toSet)
 
 
   /** Deletes the record by id */
@@ -123,7 +123,7 @@ class Lab2_0(db: Database) {
   def createDirector(record: Director)(implicit ec: ExecutionContext): Future[Int] = db.run(DirectorTable.table += record)
 
   /** Gets all records */
-  def getAllDirectors(implicit ec: ExecutionContext): Future[Set[Director]] = db.run(MovieGenreTable.table.result).mapTo
+  def getAllDirectors(implicit ec: ExecutionContext): Future[Set[Director]] = db.run(DirectorTable.table.result).map(_.toSet)
 
   /** Updates record by id */
   def updateDirectorById(id: Int, record: Director)(implicit ec: ExecutionContext): Future[Int] = db.run (DirectorTable.table
@@ -141,7 +141,7 @@ class Lab2_0(db: Database) {
   def createMovieDirection(record: MovieDirection)(implicit ec: ExecutionContext): Future[Int] = db.run(MovieDirectionTable.table += record)
 
   /** Gets all records */
-  def getAllMovieDirections(implicit ec: ExecutionContext): Future[Set[MovieDirection]] =  db.run(MovieDirectionTable.table.result).mapTo
+  def getAllMovieDirections(implicit ec: ExecutionContext): Future[Set[MovieDirection]] =  db.run(MovieDirectionTable.table.result).map(x => x.toSet)
 
   /** Deletes the record by id */
   def deleteMovieDirectionById(directorId: Int, movieId: Int)(implicit ec: ExecutionContext): Future[Int] = db.run (MovieDirectionTable.table
@@ -153,7 +153,7 @@ class Lab2_0(db: Database) {
   def createActor(record: Actor)(implicit ec: ExecutionContext): Future[Int] = db.run(ActorTable.table += record)
 
   /** Gets all records */
-  def getAllActors(implicit ec: ExecutionContext): Future[Set[Actor]] = db.run(ActorTable.table.result).mapTo
+  def getAllActors(implicit ec: ExecutionContext): Future[Set[Actor]] = db.run(ActorTable.table.result).map(x => x.toSet)
 
   /** Updates record by id */
   def updateActorById(id: Int, record: Actor)(implicit ec: ExecutionContext): Future[Int] = db.run(ActorTable.table
@@ -170,7 +170,7 @@ class Lab2_0(db: Database) {
   def createMovieCast(record: MovieCast)(implicit ec: ExecutionContext): Future[Int] = db.run(MoviecastTable.table += record)
 
   /** Gets all records */
-  def getAllMovieCasts(implicit ec: ExecutionContext): Future[Set[MovieCast]] = db.run(MoviecastTable.table.result).mapTo
+  def getAllMovieCasts(implicit ec: ExecutionContext): Future[Set[MovieCast]] = db.run(MoviecastTable.table.result).map(x => x.toSet)
 
   /** Updates record by id */
   def updateMovieCastById(actorId: Int, movieId: Int, record: MovieCast)(implicit ec: ExecutionContext): Future[Int] = db.run(MoviecastTable.table

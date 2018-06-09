@@ -9,7 +9,7 @@ import model._
 import scala.concurrent.Future
 
 class MovieTable(tag: Tag) extends Table[model.Movie](tag, "movies"){
-  val id = column[Int]("id", O.PrimaryKey, O.AutoInc)
+  val id = column[Int]("id", O.PrimaryKey)
   val title = column[String]("title")
   val year = column[Int]("year")
   val time = column[Int]("time")
