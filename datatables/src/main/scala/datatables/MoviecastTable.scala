@@ -15,9 +15,6 @@ class MoviecastTable(tag: Tag) extends Table[model.MovieCast](tag, "movie_cast")
 
 
 }
-
-
-
 object MoviecastTable {
   val table = TableQuery[MoviecastTable]
 }

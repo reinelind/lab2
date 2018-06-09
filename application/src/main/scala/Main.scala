@@ -12,7 +12,7 @@ object Main {
     val db = Database.forConfig("postgresql")
     implicit val c : ExecutionContext = ExecutionContext.global
     val lab20 = new Lab2_0(db)
-    Await.result (lab20.drop, Duration.Inf)
+    Await.result (lab20.create, Duration.Inf)
     Thread.sleep(10000)
 
     db.close()
