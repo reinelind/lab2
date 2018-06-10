@@ -14,7 +14,9 @@ class RatingTable (tag : Tag) extends Table[model.Rating] (tag, "Rating"){
   def * = (movieId,reviewId, stars,numORatings).mapTo[model.Rating]
 }
 
+
+
 object RatingTable {
-  val table = TableQuery [RatingTable]
+  lazy val table = TableQuery [RatingTable]
 
 }
